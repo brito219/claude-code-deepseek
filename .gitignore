@@ -1,2 +1,18 @@
 __pycache__/
 *.pyc
+
+# secrets
+.env
+.env.*
+*.pem
+*.key
+api_key
+credentials*
+.npmrc
+.pypirc
+.netrc
+
+# local skill output
+out/
+sessions/
+ledger.jsonl
