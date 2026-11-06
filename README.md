@@ -30,10 +30,10 @@ git clone https://github.com/brito219/claude-code-deepseek ~/.claude/skills/deep
 
 **2. Salve sua chave da DeepSeek.** Crie a chave em [platform.deepseek.com](https://platform.deepseek.com) → API keys e coloque uns dólares de crédito.
 
-Rode este comando **num terminal normal**, fora do Claude Code, para a chave não ficar salva na conversa. Troque só o `sk-SUA-CHAVE` e mantenha as aspas simples:
+Rode este comando **num terminal normal**, fora do Claude Code, para a chave não ficar salva na conversa. Ele pede a chave sem mostrar o que você digita, e assim ela também não fica gravada no histórico do terminal. Rode, cole a chave e aperte Enter:
 
 ```bash
-mkdir -p ~/.config/deepseek && printf '%s' 'sk-SUA-CHAVE' > ~/.config/deepseek/api_key && chmod 600 ~/.config/deepseek/api_key
+mkdir -p ~/.config/deepseek && chmod 700 ~/.config/deepseek && read -rsp 'DeepSeek API key: ' K && printf '%s' "$K" > ~/.config/deepseek/api_key && unset K && chmod 600 ~/.config/deepseek/api_key && echo ' ok'
 ```
 
 A variável de ambiente `DEEPSEEK_API_KEY` também funciona.
